@@ -1,0 +1,24 @@
+{
+  "name": "legacy-to-do-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\"\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:frontend": "cd app && npm install",
+    "install:backend": "cd backend && npm install",
+    "start:frontend": "cd app && npm start",    
+    "start:backend": "cd backend && node index.js",   
+    "postinstall": "npm run install:frontend && npm run install:backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilaForer/Legacy-to-do-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamilaForer/Legacy-to-do-list/issues"
+  },
+  "homepage": "https://github.com/CamilaForer/Legacy-to-do-list#readme"
+}
