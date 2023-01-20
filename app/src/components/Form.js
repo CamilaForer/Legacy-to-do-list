@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Form = ({ addTodo }) => {
     const [inputValue, setInputValue] = useState("");
 
@@ -31,6 +32,7 @@ const Form = ({ addTodo }) => {
                     
                     <div className="column one wide">
                         <button type="submit" className="ui button circular icon green"><i className="white plus icon"></i></button>
+                        
                     </div>
                 </div>
             </div>
