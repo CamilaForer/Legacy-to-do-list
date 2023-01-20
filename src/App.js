@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import "./App.css"
 import todos from "./apis";
 import Form from "./components/Form";
 import Section from "./components/Section";
 import List from "./components/List";
-import Cards from "./components/Cards";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const appTitle = "To-Do App";
+
 const App = () => {
   const [todoList, setTodoList] = useState([]);
 
@@ -35,9 +35,10 @@ const App = () => {
 
   return (
     <div className="ui container center aligned">
-      <Section>
-        <h1>{appTitle}</h1>
-      </Section>
+      <header className="header">
+        <p className="title">Flores del Tambo</p>
+        <p className="caption">To-do list</p>
+      </header>
       <Section>
         <Form addTodo={addTodo} />
       </Section>
@@ -48,9 +49,7 @@ const App = () => {
           list={todoList}
         />
       </Section>
-      <Section>
-        <Cards/>
-      </Section>
+      
 
     </div>
   );

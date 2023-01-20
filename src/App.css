@@ -1,0 +1,27 @@
+body {
+  background-image: url(../public/img/wallpaper.jpg);
+}
+.header {
+  background: #eaeaea;
+  margin-top: 5%;
+  padding: 5% 0;
+  
+}
+.title, .caption {
+  font-family: "Noto Serif";
+  font-weight: 800;
+  font-size: clamp(1rem,4vw,3rem);
+  line-height: 40px;
+  color: #9399fb;
+  text-transform: uppercase;
+}
+.caption{
+  color: #6C937E;
+  font-weight: 400;
+}
+.ui.green.button, .ui.green.buttons .button {
+  background-color: #0D9924;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+}
