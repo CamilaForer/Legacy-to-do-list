@@ -6,13 +6,17 @@ const PORT = 3030;
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
-const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false };
+const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true };
 
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb+srv://appuser:Todo0147Project@todolist.xyepi7r.mongodb.net/?retryWrites=true&w=majority", connectionOptions)
-    .then(() => console.log("Connected successfully"))
+const dbuser=process.env.DB_USER;
+const dbpass=process.env.DB_PASS;
+
+
+mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@todolist.xyepi7r.mongodb.net/todolist?retryWrites=true&w=majority`, connectionOptions)
+    .then(() => console.log("Connected successfully, with Atlass"))
     .catch((err) => console.error(err));
 
 app.use("/todos", todoRoutes);
