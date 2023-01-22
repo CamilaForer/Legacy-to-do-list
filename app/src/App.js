@@ -4,6 +4,7 @@ import todos from "./apis";
 import Form from "./components/Form";
 import Section from "./components/Section";
 import List from "./components/List";
+import Modal from './components/Modal'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -49,8 +50,7 @@ const App = () => {
           list={todoList}
         />
       </Section>
-      
-
+      <Modal/>
     </div>
   );
 };

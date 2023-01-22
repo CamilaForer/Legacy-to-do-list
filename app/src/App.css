@@ -1,27 +1,77 @@
 body {
   background-image: url(../public/img/wallpaper.jpg);
+  padding-top: 5%;
 }
 .header {
-  background: #eaeaea;
-  margin-top: 5%;
-  padding: 5% 0;
-  
+  background: rgba(234,234,234, 0.8);
+  padding: 4% 0;
 }
 .title, .caption {
   font-family: "Noto Serif";
   font-weight: 800;
-  font-size: clamp(1rem,4vw,3rem);
+  font-size: clamp(1.8rem,4vw,3rem);
   line-height: 40px;
   color: #9399fb;
   text-transform: uppercase;
 }
+.title{
+  margin-bottom: 0;
+}
 .caption{
+  font-size: clamp(1.7rem,4vw,3rem);
   color: #6C937E;
   font-weight: 400;
+}
+input{
+  background: rgba(248, 248, 248, 0.9) !important;
+  border:2px solid rgb(195, 195, 195)!important;
+  border-radius: 10px !important;
+  padding: .6em .7em .8em !important;
+}
+.row{
+  align-items: center !important;
+}
+.ui.grid>.row>[class*="five wide"].column{
+  left: -1em;
+  width: 85% !important;
+  padding: 0;
+}
+.ui.grid>.row>[class*="one wide"].column{
+  padding-left: 1em;
 }
 .ui.green.button, .ui.green.buttons .button {
   background-color: #0D9924;
   color: #fff;
   text-shadow: none;
   background-image: none;
+}
+/* MODAL */
+.modal-dialog{
+  max-width: 700px !important;
+}
+.modal-content{
+  border: none;
+  background-color: #D9D9D9 !important;
+}
+.close{
+  position: absolute;
+  right: 5%;
+  border: none;
+}
+.modal-header{
+  display: flex;
+  justify-content: center !important;
+  border: none !important;
+}
+.modal-header .btn-filter{
+  margin: 2%;
+  padding: 2% 3%;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: 500;
+  background-color: #0D9924;
+}
+.btn-filter:first-child{
+  background-color: #D24646;
 }

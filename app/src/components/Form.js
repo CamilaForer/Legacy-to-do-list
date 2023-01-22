@@ -26,7 +26,7 @@ const Form = ({ addTodo }) => {
                             value={inputValue}
                             onChange={handleInputChange}
                             type="text"
-                            placeholder="Enter something to do..."
+                            placeholder="Añade una tarea 👀"
                         />
                     </div>
                     
