@@ -50,20 +50,17 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                     </div>
                 </div> :
                 <>
-                    <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
-                        <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
-                    </div>
-
-                    <div className="column one wide">
+                    <div className="column five wide flex-task" onDoubleClick={handleDivDoubleClick}>
+                        {/* Done Button */}
                         <button
                             className={"ui button circular icon" + (completedState ? " blue" : " green")}
                             onClick={handleButtonClick}
                         >
                             <i className="white check icon"></i>
                         </button>
-                    </div>
-
-                    <div className="column one wide">
+                        {/* Text */}
+                        <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
+                        {/* Delete Button */}
                         <button
                             onClick={removeTodoItemProp}
                             className="ui button circular icon red"
@@ -71,6 +68,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                             <i className="white remove icon"></i>
                         </button>
                     </div>
+
                 </>
             }
         </div>
