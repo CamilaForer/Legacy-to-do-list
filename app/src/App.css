@@ -68,8 +68,8 @@ input{
   border: 3px solid rgba(98, 174, 243, 1);
 }
 .row3{
-  background-color: #fd4967;
-  border: 3px solid rgb(248, 20, 50);
+  background-color: rgb(247, 193, 193);
+  border: 3px solid rgb(250, 72, 72);
 }
 .ui.green.header{
   color: #9a9a9a !important;
@@ -136,6 +136,13 @@ input{
 .btn-filter:first-child{
   background-color: #D24646;
 }
+.ui.button.trashBtn{
+  background: transparent;
+}
+.iconfold{
+  font-size: 30px !important;
+  margin-left: 10px !important;
+}
 @media (max-width: 768px){
   .ui.header{
     width:400px !important;
@@ -176,3 +183,4 @@ input{
     width: 150px !important;
   }
 }
+

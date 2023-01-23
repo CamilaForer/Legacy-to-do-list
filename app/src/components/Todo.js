@@ -73,7 +73,7 @@ const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp, 
                         {/* Delete Button */}
                         <button
                             onClick={ permanentDelete ? removeTodoItemProp : archiveDelete } 
-                            className={"ui icon button"}
+                            className={"ui icon button trashBtn"}
                         >
                             <i className="trash icon red"></i>
                         </button>

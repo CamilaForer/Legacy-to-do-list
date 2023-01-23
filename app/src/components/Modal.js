@@ -29,23 +29,23 @@ const Modal = () => {
     return (
         <>
             {/* Button trigger modal */}
-            <button type="button"class="btn-modal" data-toggle="modal" data-target="#exampleModal">
-                📂
+            <button type="button"className="btn-modal" data-toggle="modal" data-target="#exampleModal">
+                <i className="folder open icon iconfold"></i>
                 {/* BsFillCollectionFill */}
                 {/* AiFillFolderOpen */}
             </button>
             {/* Modal */}
             <div
-                class="modal fade"
+                className="modal fade"
                 id="exampleModal"
                 tabindex="-1"
                 role="dialog"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
             >
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
                             <button className="btn-filter" onClick={()=>{setListDeleted(true)}}>Eliminadas</button>
                             <button className="btn-filter" onClick={()=>{setListDeleted(false)}}>Realizadas</button>
                             <button type="button" className="close-modal" data-dismiss="modal" aria-label="Close">
@@ -55,7 +55,7 @@ const Modal = () => {
                             </button>
                         </div>
                         {/* FILTER TODO */}
-                        <div class="modal-body">
+                        <div className="modal-body">
                         <List
                             editTodoListProp={editTodo}
                             removeTodoListProp={removeTodo}
