@@ -46,7 +46,7 @@ const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp, 
     };
 
     return (
-        <div className={"row" + (completedState ? " row2" : "")}>
+        <div className={"row" + (completedState ? " row2" : "")+(permanentDelete ? " row3" : "")}>
             {
             isEditing ?
                 <div className="column seven wide">

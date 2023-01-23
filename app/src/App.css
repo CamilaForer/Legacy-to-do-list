@@ -67,6 +67,10 @@ input{
   background-color: #C5EBFE;
   border: 3px solid rgba(98, 174, 243, 1);
 }
+.row3{
+  background-color: #fd4967;
+  border: 3px solid rgb(248, 20, 50);
+}
 .ui.green.header{
   color: #9a9a9a !important;
   text-decoration:line-through;
