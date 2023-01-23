@@ -40,7 +40,9 @@ input{
   word-wrap: break-word;
 }
 .left-1{
-    left: -1em;
+  left: -1em;
+  background: none !important;
+  border: none !important;
 }
 .ui.grid>.row>[class*="one wide"].column{
   padding-left: 1em;
@@ -52,12 +54,8 @@ input{
   background-image: none;
 }
 /* TODO */
-.flex-task{
-    word-wrap: break-word;
-}
-.ui.header{
-  background: none !important;
-  margin: 1% 0;
+.ui.grid>.row{
+  padding: .5rem 0;
 }
 .row{
   background-color: rgb(213, 215, 249);
@@ -65,7 +63,25 @@ input{
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+.flex-task{
+    word-wrap: break-word;
+}
+.ui.header{
+  font-size: 1.5rem !important;
+  background: none !important;
+  margin: 1% 0;
+}
 /* MODAL */
+.btn-modal{
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  bottom: 3%;
+  right: 2%;
+  background: #C5EBFE;
+  border: 3px solid #62AEF3;
+  border-radius: 100%;
+}
 .modal-dialog{
   max-width: 700px !important;
 }
@@ -107,23 +123,27 @@ input{
   .ui.grid>.row>[class*="five wide"].column{
     width: 100% !important;
   }
+  .ui.grid>.row>[class*="one wide"].column{
+    padding-left: 0;
+    margin-top: 10px;
+    left: -10px;
+  }
+  .left-1{
+    left: 0;
+  }
 }
 @media (max-width: 375px){
   .ui.container{
     margin: 0 !important;
     padding: 0 !important;
   }
-  .left-1{
-    left: 0;
-  }
-  .ui.grid>.row>[class*="one wide"].column{
-    padding-left: 0;
-    margin-top: 10px;
-    left: -10px;
-  }
   .ui.header{
     font-size: 1.2rem !important;
     width: 190px;
+  }
+  .btn-modal{
+    width: 70px;
+    height: 70px;
   }
 }
 @media (max-width: 320px){
