@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp }) => {
+const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp, permanentDelete }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
@@ -18,6 +18,7 @@ const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp }
     });
 };
 
+    
 
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
@@ -71,10 +72,10 @@ const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp }
                         <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
                         {/* Delete Button */}
                         <button
-                            onClick={archiveDelete}
-                            className={"ui button circular icon red"}
+                            onClick={ permanentDelete ? removeTodoItemProp : archiveDelete } 
+                            className={"ui icon button"}
                         >
-                            <i className="white remove icon"></i>
+                            <i className="trash icon red"></i>
                         </button>
                     </div>
 

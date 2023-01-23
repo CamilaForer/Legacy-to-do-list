@@ -8,17 +8,17 @@ import Modal from './components/Modal'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+
 const App = () => {
   const [todoList, setTodoList] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const { data } = await todos.get("/todos");
-      setTodoList(data);
-    }
+  useEffect(() => { 
+    async function fetchData() { 
+        const { data } = await todos.get("/todos"); 
+        const filteredData = data.filter(todo => todo.deleted === false ); 
+        setTodoList(filteredData); } 
+  fetchData(); }); 
 
-    fetchData();
-  }, []);
 
   const addTodo = async (item) => {
     const { data } = await todos.post("/todos", item);
@@ -32,6 +32,8 @@ const App = () => {
 
   const editTodo = async (id, item) => {
     await todos.put(`/todos/${id}`, item);
+
+  
   };
   return (
     <div className="ui container center aligned">

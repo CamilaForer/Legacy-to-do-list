@@ -4,21 +4,16 @@ import { useState, useEffect } from "react";
 
 const Modal = () => {
     const [todoList, setTodoList] = useState([]);
+    const [listDeleted, setListDeleted] = useState(false);
 
 
     useEffect(() => { 
         async function fetchData() { 
             const { data } = await todos.get("/todos"); 
-            const filteredData = data.filter(todo => todo.completed === true); 
-            const filteredDataDeleted = data.filter(todo => todo.deleted === true); 
-            const listaFinal=[...filteredData,...filteredDataDeleted];
-            setTodoList(listaFinal); } 
+            const filteredData = data.filter(todo => todo.completed === true ); 
+            const filteredDatadeleted = data.filter(todo => todo.deleted === true); 
+            setTodoList(listDeleted? filteredDatadeleted: filteredData); } 
     fetchData(); }); 
-
-/*     const addTodo = async (item) => {
-        const { data } = await todos.post("/todos", item);
-        setTodoList((oldList) => [...oldList, data]);
-    }; */
 
     const removeTodo = async (id) => {
         await todos.delete(`/todos/${id}`);
@@ -51,8 +46,8 @@ const Modal = () => {
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button className="btn-filter">Eliminadas</button>
-                            <button className="btn-filter">Realizadas</button>
+                            <button className="btn-filter" onClick={()=>{setListDeleted(true)}}>Eliminadas</button>
+                            <button className="btn-filter" onClick={()=>{setListDeleted(false)}}>Realizadas</button>
                             <button type="button" className="close-modal" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">
                                     <i className="black remove icon"></i>
