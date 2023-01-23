@@ -2,43 +2,34 @@ import List from "./List";
 import todos from "../apis";
 import { useState, useEffect } from "react";
 
-const Modal = (_) => {
+const Modal = () => {
     const [todoList, setTodoList] = useState([]);
 
-    useEffect(() => {
-        async function fetchData() {
-        const { data } = await todos.get("/todos");
-        setTodoList(data);
-    }
 
-    fetchData();
-    }, []);
+    useEffect(() => { 
+        async function fetchData() { 
+            const { data } = await todos.get("/todos"); 
+            const filteredData = data.filter(todo => todo.completed === true); 
+            const filteredDataDeleted = data.filter(todo => todo.deleted === true); 
+            const listaFinal=[...filteredData,...filteredDataDeleted];
+            setTodoList(listaFinal); } 
+    fetchData(); }); 
 
-    const addTodo = async (item) => {
+/*     const addTodo = async (item) => {
         const { data } = await todos.post("/todos", item);
         setTodoList((oldList) => [...oldList, data]);
-    };
+    }; */
 
     const removeTodo = async (id) => {
         await todos.delete(`/todos/${id}`);
         setTodoList((oldList) => oldList.filter((item) => item._id !== id));
     };
 
+
     const editTodo = async (id, item) => {
         await todos.put(`/todos/${id}`, item);
     };
 
-    /* FILTER */
-/*     const [data, setData] = useState(todos);
-    const filterResult = (typeOfCategory) => {
-        const result = products.filter(
-            (curDate) => {
-                return curDate.category === typeOfCategory
-            }
-        );
-        //All products
-        setData(result)
-    } */
 
     return (
         <>

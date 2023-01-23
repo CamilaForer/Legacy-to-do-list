@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 
-const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
     const [completedState, setCompleted] = useState(completed);
+    //const [erasedState, setErased] = useState(deleted);
 
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
+    //const erased = () => {
+    //    setErased((oldDeleted) => {
+    //        const newState = !oldDeleted;
+    //        editTodoItemProp({ deleted: newState });
+    //        return newState;
+    //    });
+    //};
 
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
