@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 
-const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp, permanentDelete }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
     const [completedState, setCompleted] = useState(completed);
+    const [erasedState, setErased] = useState(deleted);
 
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
+    const archiveDelete = () => {
+   setErased((oldDeleted) => {
+        const newState = !oldDeleted;
+           editTodoItemProp({ deleted: newState });
+        return newState;
+    });
+};
+
+    
 
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
@@ -36,7 +46,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     };
 
     return (
-        <div className="row">
+        <div className={"row" + (completedState ? " row2" : "")+(permanentDelete ? " row3" : "")}>
             {
             isEditing ?
                 <div className="column seven wide">
@@ -50,27 +60,25 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                     </div>
                 </div> :
                 <>
-                    <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
-                        <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
-                    </div>
-
-                    <div className="column one wide">
+                    <div className="column five wide flex-task" onDoubleClick={handleDivDoubleClick}>
+                        {/* Done Button */}
                         <button
                             className={"ui button circular icon" + (completedState ? " blue" : " green")}
                             onClick={handleButtonClick}
                         >
                             <i className="white check icon"></i>
                         </button>
-                    </div>
-
-                    <div className="column one wide">
+                        {/* Text */}
+                        <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
+                        {/* Delete Button */}
                         <button
-                            onClick={removeTodoItemProp}
-                            className="ui button circular icon red"
+                            onClick={ permanentDelete ? removeTodoItemProp : archiveDelete } 
+                            className={"ui icon button trashBtn"}
                         >
-                            <i className="white remove icon"></i>
+                            <i className="trash icon red"></i>
                         </button>
                     </div>
+
                 </>
             }
         </div>

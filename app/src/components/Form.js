@@ -13,20 +13,20 @@ const Form = ({ addTodo }) => {
 
         if(inputValue.trim() === "") return;
 
-        addTodo({ title: inputValue, completed: false });
+        addTodo({ title: inputValue, completed: false, deleted:false});
         setInputValue("");
     };
     
     return (
         <form className="ui form" onSubmit={handleFormSubmit}>
             <div className="ui grid center aligned">
-                <div className="row">
-                    <div className="column five wide">
+                <div className="row left-1">
+                    <div className="column five wide imput-wide">
                         <input
                             value={inputValue}
                             onChange={handleInputChange}
                             type="text"
-                            placeholder="Enter something to do..."
+                            placeholder="Añade una tarea 👀"
                         />
                     </div>
                     
