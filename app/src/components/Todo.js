@@ -36,7 +36,7 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     };
 
     return (
-        <div className="row">
+        <div className={"row" + (completedState ? " row2" : "")}>
             {
             isEditing ?
                 <div className="column seven wide">

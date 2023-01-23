@@ -63,6 +63,14 @@ input{
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+.row2{
+  background-color: #C5EBFE;
+  border: 3px solid rgba(98, 174, 243, 1);
+}
+.ui.green.header{
+  color: #9a9a9a !important;
+  text-decoration:line-through;
+}
 .flex-task{
     word-wrap: break-word;
 }
@@ -117,6 +125,9 @@ input{
   color: #fff;
   font-weight: 500;
   background-color: #0D9924;
+}
+.modal-body{
+  margin: 0% 5%;
 }
 .btn-filter:first-child{
   background-color: #D24646;
