@@ -5,18 +5,19 @@ const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp }
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
     const [completedState, setCompleted] = useState(completed);
-    //const [erasedState, setErased] = useState(deleted);
+    const [erasedState, setErased] = useState(deleted);
 
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
-    //const erased = () => {
-    //    setErased((oldDeleted) => {
-    //        const newState = !oldDeleted;
-    //        editTodoItemProp({ deleted: newState });
-    //        return newState;
-    //    });
-    //};
+    const archiveDelete = () => {
+   setErased((oldDeleted) => {
+        const newState = !oldDeleted;
+           editTodoItemProp({ deleted: newState });
+        return newState;
+    });
+};
+
 
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
@@ -70,7 +71,7 @@ const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp }
                         <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>
                         {/* Delete Button */}
                         <button
-                            onClick={removeTodoItemProp}
+                            onClick={archiveDelete}
                             className="ui button circular icon red"
                         >
                             <i className="white remove icon"></i>
