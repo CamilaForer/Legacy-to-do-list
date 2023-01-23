@@ -72,7 +72,7 @@ const Todo = ({ title, completed,deleted, removeTodoItemProp, editTodoItemProp }
                         {/* Delete Button */}
                         <button
                             onClick={archiveDelete}
-                            className="ui button circular icon red"
+                            className={"ui button circular icon red"}
                         >
                             <i className="white remove icon"></i>
                         </button>
