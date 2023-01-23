@@ -1,5 +1,4 @@
 
-
 const Modal = (_) => {
     return (
         <>
@@ -23,16 +22,16 @@ const Modal = (_) => {
                         <div class="modal-header">
                             <button className="btn-filter">Eliminadas</button>
                             <button className="btn-filter">Realizadas</button>
-                            <button
-                                type="button"
-                                class="close"
-                                data-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                <span aria-hidden="true">x</span>
+                            <button type="button" className="close-modal" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">
+                                    <i className="black remove icon"></i>
+                                </span>
                             </button>
                         </div>
-                        <div class="modal-body">...</div>
+                        {/* FILTER TODO */}
+                        <div class="modal-body">
+                            ...
+                        </div>
                     </div>
                 </div>
             </div>

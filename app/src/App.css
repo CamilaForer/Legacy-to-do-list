@@ -89,10 +89,20 @@ input{
   border: none;
   background-color: #D9D9D9 !important;
 }
-.close{
+.close-modal{
   position: absolute;
+  width: 26px;
+  height: 26px;
+  padding: 0%;
   right: 5%;
-  border: none;
+  border: #898989 solid 2px;
+  border-radius: 100%;
+  background: #f6f6f6;
+}
+.close-modal i{
+  top: -30px;
+  margin: 0px !important;
+  font-size: 11px;
 }
 .modal-header{
   display: flex;
