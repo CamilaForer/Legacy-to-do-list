@@ -32,8 +32,6 @@ const App = () => {
 
   const editTodo = async (id, item) => {
     await todos.put(`/todos/${id}`, item);
-
-  
   };
   return (
     <div className="ui container center aligned">

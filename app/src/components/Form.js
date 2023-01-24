@@ -1,22 +1,24 @@
+//Imports the main React component and the useState state hook.
 import React, { useState } from "react";
 
-
+//Definition of the Form component that receives a prop called addTodo
 const Form = ({ addTodo }) => {
     const [inputValue, setInputValue] = useState("");
 
+    // Function in charge of updating the value of the input
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     };
 
+    //The handleFormSubmit function is an event handler that is called when the user submits the form.
     const handleFormSubmit = (e) => {
         e.preventDefault();
-
         if(inputValue.trim() === "") return;
-
         addTodo({ title: inputValue, completed: false, deleted:false});
         setInputValue("");
     };
     
+    //Render the component in the DOM
     return (
         <form className="ui form" onSubmit={handleFormSubmit}>
             <div className="ui grid center aligned">
