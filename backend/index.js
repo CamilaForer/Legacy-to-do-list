@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3030;
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
+const indexRoute = require("./routes/indexRoute");
 const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true };
 
 app.use(express.json());
@@ -20,6 +21,8 @@ mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@todolist.xyepi7r.mongodb.net
     .catch((err) => console.error(err));
 
 app.use("/todos", todoRoutes);
+app.use("/", indexRoute);
+
 
 app.listen(PORT, () => {
     console.log("The server is listening on port " + PORT);
