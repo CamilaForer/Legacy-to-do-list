@@ -4,14 +4,13 @@
 ![image](https://user-images.githubusercontent.com/92132152/214195811-b9e13218-bef6-4d83-ae10-68ef90cdd42d.png)
 ![image](https://user-images.githubusercontent.com/92132152/214195908-bb000673-7990-4f3e-a94d-b1ce4755aa04.png)
 
-The To do list Flores del Tambo is a web page that allows the workers of the Flores del Tambo company to organize their day, determining the tasks to be carried out, selecting the tasks carried out and the tasks that have been eliminated. The full stack MERN application was used (MongoDB, Express, React and Node)
+The To do list 'Flores del Tambo' is a web page that allows the workers of the Flores del Tambo company to organize their day, determining the tasks to be carried out, selecting the tasks carried out and the tasks that have been eliminated. The full stack MERN application was used (MongoDB, Express, React and Node)
 
 ## Functionalities: 
 * Add tasks
 * Delete tasks 
 * Check task as completed 
 * Edit created taks 
-
 
 ## Technologies used in the project: 
 * Frontend
